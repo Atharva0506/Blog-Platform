@@ -6,13 +6,7 @@ function Navbar() {
   const { user, googleSignIn, logOut } = UserAuth();
   const [loading, setLoading] = useState(true);
 
-  const handleSignIn = async () => {
-    try {
-      await googleSignIn();
-    } catch (error) {
-      console.log(error);
-    }
-  };
+  
 
   const handleSignOut = async () => {
     try {
@@ -48,11 +42,8 @@ function Navbar() {
 
     {loading ? null : !user ? (
       <ul className="flex">
-        <li onClick={handleSignIn} className="p-2 cursor-pointer">
-          Login
-        </li>
-        <li onClick={handleSignIn} className="p-2 cursor-pointer">
-          Sign up
+        <li  className="p-2 cursor-pointer">
+          <Link href="/sign-up">sign-up</Link>  
         </li>
       </ul>
     ) : (
