@@ -1,6 +1,6 @@
 import "./globals.css";
 import { Inter } from "next/font/google";
-// import Navbar from "@/components/navbar/Navbar";
+import Navbar from "@/components/navbar/Navbar";
 import Footer from "@/components/footer/Footer";
 import { ThemeContextProvider } from "@/context/ThemeContext";
 import ThemeProvider from "@/providers/ThemeProvider";
@@ -22,7 +22,7 @@ export default function RootLayout({ children }) {
             <ThemeProvider>
               <div className="container">
                 <div className="wrapper">
-                  {/* <Navbar /> */}
+                  <Navbar />
                   {children}
                   <Footer />
                 </div>
