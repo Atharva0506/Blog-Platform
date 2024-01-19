@@ -11,7 +11,7 @@ const Navbar = () => {
     <div className={styles.links}>
       <ThemeToggle />
       <Link href="/" className={styles.link}>Home</Link>
-      <Link href="/" className={styles.link}>About</Link>
+      <Link href="https://github.com/Atharva0506/Blog-Platform/" className={styles.link}>About</Link>
       <AuthLinks />
     </div>
   </div>

@@ -30,8 +30,8 @@ const Footer = () => {
         </div>
         <div className={styles.list}>
           <span className={styles.listTitle}>Social</span>
-          <Link href="/">Github</Link>
-          <Link href="/">Linkidn</Link>
+          <Link href="https://github.com/Atharva0506/Blog-Platform/">Github</Link>
+          <Link href="https://www.linkedin.com/in/atharva-naik-527b74255/">Linkidn</Link>
         </div>
       </div>
     </div>
