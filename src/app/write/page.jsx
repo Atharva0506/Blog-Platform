@@ -1,5 +1,4 @@
-"use client";
-
+"use client"
 import Image from "next/image";
 import styles from "./writePage.module.css";
 import { useEffect, useState } from "react";
@@ -14,7 +13,8 @@ import {
 } from "firebase/storage";
 import { app } from "@/utils/firebase";
 import ReactQuill from "react-quill";
-
+import plus from "../../../public/plus.png"
+import image from "../../../public/image.png"
 const WritePage = () => {
   const { status } = useSession();
   const router = useRouter();
@@ -25,6 +25,7 @@ const WritePage = () => {
   const [value, setValue] = useState("");
   const [title, setTitle] = useState("");
   const [catSlug, setCatSlug] = useState("");
+
 
   useEffect(() => {
     const storage = getStorage(app);
@@ -49,7 +50,7 @@ const WritePage = () => {
               break;
           }
         },
-        (error) => {},
+        (error) => { },
         () => {
           getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
             setMedia(downloadURL);
@@ -69,6 +70,7 @@ const WritePage = () => {
     router.push("/");
   }
 
+
   const slugify = (str) =>
     str
       .toLowerCase()
@@ -85,7 +87,7 @@ const WritePage = () => {
         desc: value,
         img: media,
         slug: slugify(title),
-        catSlug: catSlug || "style", //If not selected, choose the general category
+        catSlug: catSlug || "style",
       }),
     });
 
@@ -103,7 +105,10 @@ const WritePage = () => {
         className={styles.input}
         onChange={(e) => setTitle(e.target.value)}
       />
-      <select className={styles.select} onChange={(e) => setCatSlug(e.target.value)}>
+      <select
+        className={styles.select}
+        onChange={(e) => setCatSlug(e.target.value)}
+      >
         <option value="style">style</option>
         <option value="fashion">fashion</option>
         <option value="food">food</option>
@@ -113,7 +118,7 @@ const WritePage = () => {
       </select>
       <div className={styles.editor}>
         <button className={styles.button} onClick={() => setOpen(!open)}>
-          <Image src="/plus.png" alt="" width={16} height={16} />
+          <Image src={plus} alt="image" width={16} height={16} />
         </button>
         {open && (
           <div className={styles.add}>
@@ -125,7 +130,7 @@ const WritePage = () => {
             />
             <button className={styles.addButton}>
               <label htmlFor="image">
-                <Image src="/image.png" alt="" width={16} height={16} />
+                <Image src={image} alt="image" width={16} height={16} />
               </label>
             </button>
           </div>
