@@ -2,9 +2,9 @@ import React from "react";
 import styles from "./categoryList.module.css";
 import Link from "next/link";
 import Image from "next/image";
-
+import apiUrl from '@/utils/url';
 const getData = async () => {
-  const res = await fetch("http://localhost:3000/api/categories", {
+  const res = await fetch(`${apiUrl}/api/categories`, {
     cache: "no-store",
   });
 
@@ -16,6 +16,7 @@ const getData = async () => {
 };
 
 const CategoryList = async () => {
+  console.log(process.env.NEXTAUTH_URL)
   const data = await getData();
   return (
     <div className={styles.container}>
