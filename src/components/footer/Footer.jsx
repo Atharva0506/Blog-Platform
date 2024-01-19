@@ -9,13 +9,10 @@ const Footer = () => {
       <div className={styles.info}>
         <div className={styles.logo}>
           <Image src="/logo.png" alt="lama blog" width={50} height={50} />
-          <h1 className={styles.logoText}>Lamablog</h1>
+          <h1 className={styles.logoText}>blog</h1>
         </div>
         <p className={styles.desc}>
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Enim
-          necessitatibus similique aspernatur obcaecati veritatis. Aperiam cum
-          porro sequi, totam minima consequuntur, aspernatur deleniti vero
-          repellendus dorales.
+        Explore a tapestry of knowledge and inspiration on our blog projects home page. From travel tales to tech trends, our diverse collection of posts invites you to embark on a journey of discovery, one click at a time.
         </p>
       </div>
       <div className={styles.links}>
