@@ -12,9 +12,9 @@ import {
   getDownloadURL,
 } from "firebase/storage";
 import { app } from "@/utils/firebase";
-import ReactQuill from "react-quill";
 import plus from "../../../public/plus.png"
 import image from "../../../public/image.png"
+const ReactQuill = typeof window !== 'undefined' ? require('react-quill') : null;
 const WritePage = () => {
   const { status } = useSession();
   const router = useRouter();
@@ -135,6 +135,7 @@ const WritePage = () => {
             </button>
           </div>
         )}
+        {ReactQuill && (
         <ReactQuill
           className={styles.textArea}
           theme="bubble"
@@ -142,6 +143,7 @@ const WritePage = () => {
           onChange={setValue}
           placeholder="Tell your story..."
         />
+      )}
       </div>
       <button className={styles.publish} onClick={handleSubmit}>
         Publish
