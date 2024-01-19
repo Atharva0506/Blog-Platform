@@ -4,7 +4,7 @@ import Link from "next/link";
 import AuthLinks from "@/components/authLinks/AuthLinks";
 import ThemeToggle from "@/components/themeToggle/ThemeToggle";
 
-export const Navbar = () => {
+const Navbar = () => {
   return (
     <div className={styles.container}>
     <div className={styles.logo}>Blog</div>
@@ -18,3 +18,4 @@ export const Navbar = () => {
   )
 }
 
+export default Navbar;
